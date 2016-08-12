@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160801173710) do
+ActiveRecord::Schema.define(version: 20160812144526) do
 
   create_table "pals", force: :cascade do |t|
     t.string   "palname"
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 20160801173710) do
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "pal_id"
   end
 
 end

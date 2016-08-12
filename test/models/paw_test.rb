@@ -2,11 +2,20 @@ require 'test_helper'
 class PawTest < ActiveSupport::TestCase
   
   def setup
-    @paw = Paw.new(name: "tommy", summary: "this is my ljjjjjjjjjjjjjjjjjjjjdog",description: "this is a 2 year old Doberman")
+    @pal = Pal.create(palname: "bob", email: "bob@example.com")
+    @paw = @pal.paws.build(name: "tommy", summary: "this is my lst dog", description: "this is a 2 year old Doberman")
   end
   test "paw should be valid" do
     assert @paw.valid? 
   end
+  
+  
+  test "pal_id should be present" do
+    @paw.pal_id = nil
+    assert_not @paw.valid?
+  end
+  
+  
   test "name should be present" do
     @paw.name = " "
     assert_not @paw.valid?

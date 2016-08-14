@@ -1,0 +1,31 @@
+<%= render 'shared/page_title', title: @paw.name %>
+<div class="row">
+  <div class="col-md-4 pull-right center">
+    <%= gravatar_for @paw.pal, size: 200 %>
+    <p>
+      <h5>
+        Brought to you by: <%= @paw.pal.palname %>
+      </h5>
+    </p>
+  </div>
+  <div class="col-md-8 ">
+    <%= link_to "Edit this pawpage", edit_paw_path(@paw), class: "btn btn-success pull-right" %>
+    
+    <h3><%= @paw.summary %></h3>
+    <div class="well">
+      <p>
+        <strong>Description:</strong>
+      </p>
+      <%= simple_format(@paw.description) %>
+    </div>
+  </div>
+</div>
+
+<h5><%= link_to 'Return to Paws Listing', paws_path, class: "btn btn-warning btn-small" %></h5>
+
+
+
+
+
+
+

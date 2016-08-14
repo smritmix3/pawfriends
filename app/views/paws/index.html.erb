@@ -1,0 +1,21 @@
+<%= render 'shared/page_title', title: "My Pets" %>
+ 
+ <% @paws.each do |paw| %>
+ <div class="row">
+   <div class="col-md-2">
+     <section class="pal_info center">
+       <%= gravatar_for paw.pal, size:100 %>
+       <h5>Pal Name: <%= paw.pal.palname %></h5>
+     </section>
+   </div>
+   <div class="col-lg-8 well">
+     <h4><%=link_to paw.name, paw_path(paw) %></h4>
+<p><%= paw.summary %></p>
+<p>
+<span class='quit'><small><%= time_ago_in_words(paw.created_at) %></small></span>
+  </p> 
+   </div>
+   
+ </div>
+ <hr/>
+ <% end %>

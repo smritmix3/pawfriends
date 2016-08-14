@@ -1,0 +1,17 @@
+<%= render 'shared/errors', obj: @paw %>
+
+<div class="row">
+<div class= "well col-md-8 col-md-offset-2">
+  <%= form_for @paw do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  
+  <%= f.label :summary %>
+  <%= f.text_field :summary %>
+  <%= f.label :description %>
+  <%= f.text_area :description, rows: 10 %>
+  
+  <%= f.submit(@paw.new_record? ? 'Create Paw' : 'Edit Pawpawpage', class: "btn btn-success") %>
+  <% end %>
+</div>
+</div>

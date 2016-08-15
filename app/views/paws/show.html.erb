@@ -12,6 +12,12 @@
     <%= link_to "Edit this pawpage", edit_paw_path(@paw), class: "btn btn-success pull-right" %>
     
     <h3><%= @paw.summary %></h3>
+    
+    <div class="show_paw">
+      
+      <%= image_tag(@paw.picture.url, class: "gravatar") if @paw.picture? %>
+    </div>
+    
     <div class="well">
       <p>
         <strong>Description:</strong>

@@ -43,7 +43,7 @@ class PawsController < ApplicationController
   private
   
     def paw_params
-      params.require(:paw).permit(:name, :summary, :description)
+      params.require(:paw).permit(:name, :summary, :description, :picture)
     end  
   
 end

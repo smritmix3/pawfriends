@@ -1,5 +1,6 @@
 class Pal < ActiveRecord::Base
  has_many :paws
+ has_many :likes
  before_save { self.email = email.downcase }
  validates :palname, presence: true,length: { minimum: 3,maximum: 40 }
  
